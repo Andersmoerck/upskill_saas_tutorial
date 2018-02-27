@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
             flash[:success] = "Message sent."
             redirect_to new_contact_path
         else
-            flash[:error] = @contact.errors.full_messages.join(", ")
+            flash[:danger] = @contact.errors.full_messages.join(", ") #called the flashhash. A hash is a list of key value pair {key: value, key: value}. Here a key called error is created. The value is then derived from the part after the = sign.
             redirect_to new_contact_path
         end
     end
